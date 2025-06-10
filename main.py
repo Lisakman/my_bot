@@ -71,4 +71,4 @@ async def get_exchange_rates():
             return rates
 
 if __name__ == "__main__":
-    asyncio.run(dp.start_polling())
+    asyncio.run(dp.start_polling(bot))
