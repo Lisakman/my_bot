@@ -5,7 +5,7 @@ import asyncio
 API_TOKEN = '8183661988:AAHucFqlurcSvaLbkD8ZyI0-JAYSsF6xU_U'
 
 bot = Bot(token=API_TOKEN)
-dp = Dispatcher()
+dp = Dispatcher(bot)  # <- передаем bot сюда!
 
 @dp.message(Command(commands=["start"]))
 async def start_handler(message: types.Message):
@@ -16,7 +16,7 @@ async def echo_handler(message: types.Message):
     await message.answer(f"Ты сказал: {message.text}")
 
 async def main():
-    await dp.start_polling(bot)
+    await dp.start_polling()
 
 if __name__ == "__main__":
     asyncio.run(main())
