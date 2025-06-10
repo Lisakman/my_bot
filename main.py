@@ -5,7 +5,7 @@ import asyncio
 API_TOKEN = '8183661988:AAHucFqlurcSvaLbkD8ZyI0-JAYSsF6xU_U'
 
 bot = Bot(token=API_TOKEN)
-dp = Dispatcher(bot)  # <- передаем bot сюда!
+dp = Dispatcher()  # <- передаем bot сюда!
 
 @dp.message(Command(commands=["start"]))
 async def start_handler(message: types.Message):
